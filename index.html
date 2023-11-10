@@ -23,8 +23,8 @@
           sunrise and sunset times.
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <form id="dashboard_form">
-            <div class="container"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/forms/select/-->
+          <div class="container">
+            <form id="dashboard_form"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/forms/select/-->
               <select class="form-select" aria-label="Select location">
                 <option selected>Select a Location</option>
                 <option value="1">Los Angeles, CA</option>
@@ -34,10 +34,11 @@
                 <option value="5">Manila, PHL</option>
               </select>
               <div class="col-12">
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn btn-primary" id="dashboard_button" type="submit"
+                        onclick="getSunriseSunsetData()">Submit</button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
