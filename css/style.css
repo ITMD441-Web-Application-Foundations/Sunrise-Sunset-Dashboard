@@ -1,0 +1,9 @@
+* {  /* Global styles */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#dashboard_body {
+    height: 100vh; /* Extends black bg to fill entire page*/
+}
