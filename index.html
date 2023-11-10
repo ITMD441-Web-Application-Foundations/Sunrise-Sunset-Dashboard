@@ -14,28 +14,33 @@
   <title>SunriseSunset Dashboard</title>
 </head>
 <body>
-  <form>
-    <div class="container"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/forms/select/-->
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Select a Location</option>
-        <option value="1">Los Angeles, CA</option>
-        <option value="2">Salt Lake City, UT</option>
-        <option value="3">Chicago, IL</option>
-        <option value="4">New York, NY</option>
-        <option value="5">Manila, PHL</option>
-      </select>
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
+  <div class="bg-dark text-secondary px-4 py-5 text-center" id="dashboard_body"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/examples/heroes/-->
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">Sunrise Sunset Dashboard</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">
+          A simple tool powered by <a href="https://sunrisesunset.io/">SunriseSunset.io</a> to quickly get you
+          sunrise and sunset times.
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <form id="dashboard_form">
+            <div class="container"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/forms/select/-->
+              <select class="form-select" aria-label="Select location">
+                <option selected>Select a Location</option>
+                <option value="1">Los Angeles, CA</option>
+                <option value="2">Salt Lake City, UT</option>
+                <option value="3">Chicago, IL</option>
+                <option value="4">New York, NY</option>
+                <option value="5">Manila, PHL</option>
+              </select>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </form>
-  <div class="container"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/examples/footers/-->
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item">Sunrise Sunset Dashboard</li>
-      </ul>
-      <p class="text-center text-body-secondary">Powered by <a href="https://sunrisesunset.io/">SunriseSunset.io</a></p>
-    </footer>
   </div>
 </body>
 </html>
