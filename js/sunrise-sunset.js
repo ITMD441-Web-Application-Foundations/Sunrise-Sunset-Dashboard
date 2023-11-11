@@ -6,27 +6,47 @@ const LOCATION_COORDINATES = {
     "4": {latitude: 40.71427, longitude: -74.00597},        // name: "New York, NY"
     "5": {latitude: 14.5948914, longitude: 120.9782618}     // name: "Manila, PHL";
 }
+const date = new Date();
 
 // AJAX Method: fetch() API
 function getSunriseSunsetData(formSelection = document.getElementById("dashboard_form_select")){
     //Prevent page refresh
     event.preventDefault();
+    const outputDiv = document.getElementById("dashboard_output");
 
     if (formSelection.value === "-1") {
-        document.getElementById("demo").innerHTML = "";
+        // Hide output elements when choosing placeholder value
+        document.getElementById("sunrise").innerHTML = "";
+        document.getElementById("sunset").innerHTML = "";
+        document.getElementById("raw-output").innerHTML = "";
+        outputDiv.style.display = "none";
     } else {
-        const latitude = Object.values(LOCATION_COORDINATES)[formSelection.value].latitude;
-        const longitude = Object.values(LOCATION_COORDINATES)[formSelection.value].longitude;
+        const url_today =
+            `https://api.sunrisesunset.io/json
+            ?lat=${Object.values(LOCATION_COORDINATES)[formSelection.value].latitude}
+            &lng=${Object.values(LOCATION_COORDINATES)[formSelection.value].longitude}
+            &date=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+        const url_tomorrow =
+            `https://api.sunrisesunset.io/json?lat=${Object.values(LOCATION_COORDINATES)[formSelection.value].latitude}
+            &lng=${Object.values(LOCATION_COORDINATES)[formSelection.value].longitude}`
 
-        const URL = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}`
-
-        fetch(URL)
+        fetch(url_today)
             .then(response => response.json())
             .then(data => {
-                document.querySelector('#sunrise').innerHTML = data.results.sunrise
-                document.querySelector('#sunset').innerHTML = data.results.sunset
-                document.querySelector('#raw-output').innerHTML = JSON.stringify(data)
+                document.querySelector('#sunrise_today').innerHTML = data.results.sunrise
+                document.querySelector('#sunset_today').innerHTML = data.results.sunset
             })
             .catch(error => console.error('Error:', error))
+
+        fetch(url_tomorrow)
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('#sunrise_tmr').innerHTML = data.results.sunrise
+                document.querySelector('#sunset_tmr').innerHTML = data.results.sunset
+            })
+            .catch(error => console.error('Error:', error))
+
+        // Show output elements when choosing non-placeholder values
+        outputDiv.style.display = "block";
     }
 }
