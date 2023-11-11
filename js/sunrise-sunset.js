@@ -16,9 +16,10 @@ function getSunriseSunsetData(formSelection = document.getElementById("dashboard
 
     if (formSelection.value === "-1") {
         // Hide output elements when choosing placeholder value
-        document.getElementById("sunrise").innerHTML = "";
-        document.getElementById("sunset").innerHTML = "";
-        document.getElementById("raw-output").innerHTML = "";
+        document.getElementById("sunrise_today").innerHTML = "";
+        document.getElementById("sunset_today").innerHTML = "";
+        document.getElementById("sunrise_tmr").innerHTML = "";
+        document.getElementById("sunset_tmr").innerHTML = "";
         outputDiv.style.display = "none";
     } else {
         const url_today =
