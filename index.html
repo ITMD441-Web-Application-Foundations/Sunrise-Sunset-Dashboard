@@ -25,18 +25,21 @@
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <div class="container">
             <form id="dashboard_form"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/forms/select/-->
-              <select class="form-select" aria-label="Select location">
-                <option selected>Select a Location</option>
-                <option value="1">Los Angeles, CA</option>
-                <option value="2">Salt Lake City, UT</option>
-                <option value="3">Chicago, IL</option>
-                <option value="4">New York, NY</option>
-                <option value="5">Manila, PHL</option>
+              <select class="form-select" aria-label="Select location" id="dashboard_form_select">
+                <option value="-1" selected>Select a Location</option>
+                <option value="0">Los Angeles, CA</option>
+                <option value="1">Salt Lake City, UT</option>
+                <option value="2">Chicago, IL</option>
+                <option value="3">New York, NY</option>
+                <option value="4">Manila, PHL</option>
               </select>
               <div class="col-12">
                 <button class="btn btn-primary" id="dashboard_button" type="submit"
                         onclick="getSunriseSunsetData()">Submit</button>
               </div>
+              <p>Sunrise: <strong><span id="sunrise"></span></strong></p>
+              <p>Sunset: <strong><span id="sunset"></span></strong></p>
+              <code id="raw-output"></code>
             </form>
           </div>
         </div>
