@@ -37,10 +37,19 @@
                 <button class="btn btn-primary" id="dashboard_button" type="submit"
                         onclick="getSunriseSunsetData()">Submit</button>
               </div>
-              <p>Sunrise: <strong><span id="sunrise"></span></strong></p>
-              <p>Sunset: <strong><span id="sunset"></span></strong></p>
-              <code id="raw-output"></code>
             </form>
+            <div id="dashboard_output" style="display: none">
+              <div id="dashboard_output_today">
+                <h1>Today</h1>
+                <p>Sunrise: <strong><span id="sunrise_today"></span></strong></p>
+                <p>Sunset: <strong><span id="sunset_today"></span></strong></p>
+              </div>
+              <div id="dashboard_output_tomorrow">
+                <h1>Tomorrow</h1>
+                <p>Sunrise: <strong><span id="sunrise_tmr"></span></strong></p>
+                <p>Sunset: <strong><span id="sunset_tmr"></span></strong></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
