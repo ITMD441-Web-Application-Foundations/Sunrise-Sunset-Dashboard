@@ -7,3 +7,8 @@
 #dashboard_body {
     height: 100vh; /* Extends black bg to fill entire page*/
 }
+
+.icons {
+    width: 64px;
+    height: 64px;
+}
