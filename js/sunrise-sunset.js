@@ -6,26 +6,16 @@ const LOCATION_COORDINATES = {
     "4": {latitude: 40.71427, longitude: -74.00597},        // name: "New York, NY"
     "5": {latitude: 14.5948914, longitude: 120.9782618}     // name: "Manila, PHL";
 }
-const date = new Date();
 
 // AJAX Method: fetch() API
 function getSunriseSunsetData(formSelection = document.getElementById("dashboard_form_select")){
     //Prevent page refresh
-    event.preventDefault();
+    event.preventDefault()
     // Default hidden HTML element to later display output data
-    const outputDiv = document.getElementById("dashboard_output");
+    const outputDiv = document.getElementById("dashboard_output")
 
-    if (formSelection.value === "-1") {
-        // Hide output elements when choosing placeholder value
-        document.getElementById("sunrise_today").innerHTML = "";
-        document.getElementById("noon_today").innerHTML = "";
-        document.getElementById("sunset_today").innerHTML = "";
-
-        document.getElementById("sunrise_tmr").innerHTML = "";
-        document.getElementById("noon_tmr").innerHTML = "";
-        document.getElementById("sunset_tmr").innerHTML = "";
-
-        outputDiv.style.display = "none";
+    if (formSelection.value === "-1") { // Set entirety of <div id="dashboard_output"> to not display
+        outputDiv.style.display = "none"
     } else {
         // Respective URL construction for each day
         const url_today =
@@ -61,6 +51,9 @@ function getSunriseSunsetData(formSelection = document.getElementById("dashboard
                 document.querySelector('#sunrise_today').innerHTML = data.results.sunrise
                 document.querySelector('#noon_today').innerHTML = data.results.solar_noon
                 document.querySelector('#sunset_today').innerHTML = data.results.sunset
+                document.querySelector('#dawn_today').innerHTML = data.results.dawn
+                document.querySelector('#length_today').innerHTML = data.results.day_length
+                document.querySelector('#dusk_today').innerHTML = data.results.dusk
             })
             .catch(error => console.error('Error:', error))
 
@@ -70,6 +63,9 @@ function getSunriseSunsetData(formSelection = document.getElementById("dashboard
                 document.querySelector('#sunrise_tmr').innerHTML = data.results.sunrise
                 document.querySelector('#noon_tmr').innerHTML = data.results.solar_noon
                 document.querySelector('#sunset_tmr').innerHTML = data.results.sunset
+                document.querySelector('#dawn_tmr').innerHTML = data.results.dawn
+                document.querySelector('#length_tmr').innerHTML = data.results.day_length
+                document.querySelector('#dusk_tmr').innerHTML = data.results.dusk
             })
             .catch(error => console.error('Error:', error))
 
