@@ -14,7 +14,8 @@
   <title>SunriseSunset Dashboard</title>
 </head>
 <body>
-  <div class="bg-dark text-secondary px-4 py-5 text-center" id="dashboard_body"> <!--Bootstrap: https://getbootstrap.com/docs/5.3/examples/heroes/-->
+  <!--Bootstrap: https://getbootstrap.com/docs/5.3/examples/heroes/-->
+  <div class="bg-dark text-secondary px-4 py-5 text-center" id="dashboard_body">
     <div class="py-5">
       <h1 class="display-5 fw-bold text-white">Sunrise Sunset Dashboard</h1>
       <div class="col-lg-6 mx-auto">
@@ -22,8 +23,8 @@
           A simple tool powered by <a href="https://sunrisesunset.io/">SunriseSunset.io</a> to quickly get you
           sunrise and sunset times.</p>
         <p class="fs-5 mb-4">
-          Sunset icons created by
-          <a href="https://www.flaticon.com/free-icons/sunset" title="sunset icons">Icon Hubs - Flaticon</a>
+          Icons provided by
+          <a href="https://www.flaticon.com/authors/icon-hubs" title="sunset icons">Icon Hubs - Flaticon</a>
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <div class="container">
@@ -42,37 +43,71 @@
               </div>
             </form>
             <div id="dashboard_output" style="display: none">
-              <div id="dashboard_output_today">
+              <div id="dashboard_output_today" class="dashboard_output_inner">
                 <h2>Today</h2>
+                <div class="row"> <!--Bootstrap: https://getbootstrap.com/docs/4.0/layout/grid/-->
+                  <div class="col-sm">
+                    <h3>Sunrise</h3>
+                    <img class="icons" src="assets/images/sunrise.png" alt="Sunrise icon">
+                    <p><span id="sunrise_today"></span></p>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Noon</h3>
+                    <img class="icons" src="assets/images/sun.png" alt="Noon icon">
+                    <p><span id="noon_today"></span></p>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Sunset</h3>
+                    <img class="icons" src="assets/images/sunset.png" alt="Sunset icon">
+                    <p><span id="sunset_today"></span></p>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sunrise.png" alt="Sunrise icon">
-                    <p>Sunrise: <span id="sunrise_today"></span></p>
+                    <h5>Dawn</h5>
+                    <p><span id="dawn_today"></span></p>
                   </div>
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sun.png" alt="Sunrise icon">
-                    <p>Noon: <span id="noon_today"></span></p>
+                    <h5>Day Length</h5>
+                    <p><span id="length_today"></span></p>
                   </div>
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sunset.png" alt="Sunrise icon">
-                    <p>Sunset: <span id="sunset_today"></span></p>
+                    <h5>Dusk</h5>
+                    <p><span id="dusk_today"></span></p>
                   </div>
                 </div>
               </div>
-              <div id="dashboard_output_tomorrow">
+              <div id="dashboard_output_tomorrow" class="dashboard_output_inner">
                 <h2>Tomorrow</h2>
+                <div class="row"> <!--Bootstrap: https://getbootstrap.com/docs/4.0/layout/grid/-->
+                  <div class="col-sm">
+                    <h3>Sunrise</h3>
+                    <img class="icons" src="assets/images/sunrise.png" alt="Sunrise icon">
+                    <p><span id="sunrise_tmr"></span></p>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Noon</h3>
+                    <img class="icons" src="assets/images/sun.png" alt="Noon icon">
+                    <p><span id="noon_tmr"></span></p>
+                  </div>
+                  <div class="col-sm">
+                    <h3>Sunset</h3>
+                    <img class="icons" src="assets/images/sunset.png" alt="Sunset icon">
+                    <p><span id="sunset_tmr"></span></p>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sunrise.png" alt="Sunrise icon">
-                    <p>Sunrise: <span id="sunrise_tmr"></span></p>
+                    <h5>Dawn</h5>
+                    <p><span id="dawn_tmr"></span></p>
                   </div>
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sun.png" alt="Sunrise icon">
-                    <p>Noon: <span id="noon_tmr"></span></p>
+                    <h5>Day Length</h5>
+                    <p><span id="length_tmr"></span></p>
                   </div>
                   <div class="col-sm">
-                    <img class="icons" src="assets/images/sunset.png" alt="Sunrise icon">
-                    <p>Sunset: <span id="sunset_tmr"></span></p>
+                    <h5>Dusk</h5>
+                    <p><span id="dusk_tmr"></span></p>
                   </div>
                 </div>
               </div>

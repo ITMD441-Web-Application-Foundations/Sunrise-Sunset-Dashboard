@@ -5,7 +5,11 @@
 }
 
 #dashboard_body {
-    height: 100vh; /* Extends black bg to fill entire page*/
+    min-height: 100vh; /* Extends black bg to fill entire page*/
+}
+
+#dashboard_output {
+    margin-top: 5%;
 }
 
 .icons {
