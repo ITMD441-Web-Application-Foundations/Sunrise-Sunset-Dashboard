@@ -32,11 +32,12 @@ function getSunriseSunsetData(formSelection = document.getElementById("dashboard
             `https://api.sunrisesunset.io/json
             ?lat=${Object.values(LOCATION_COORDINATES)[formSelection.value].latitude}
             &lng=${Object.values(LOCATION_COORDINATES)[formSelection.value].longitude}
-            &date=${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+            &date=today`
         const url_tomorrow =
             `https://api.sunrisesunset.io/json
             ?lat=${Object.values(LOCATION_COORDINATES)[formSelection.value].latitude}
-            &lng=${Object.values(LOCATION_COORDINATES)[formSelection.value].longitude}`
+            &lng=${Object.values(LOCATION_COORDINATES)[formSelection.value].longitude}
+            &date=tomorrow`
 
         /*{ EXAMPLE RETURNED DATA
             "results": {
